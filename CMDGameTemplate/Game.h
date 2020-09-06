@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <conio.h>
 #include <iostream>
+#include <stdio.h>
 
 class Game {
 public:
@@ -32,5 +33,5 @@ private:
 	bool update = true;
 
 	//¿€º∆∫¡√Î ˝£¨
-	int tickCount, currentTick;
+	long tickCount, currentTick;
 };

@@ -2,8 +2,7 @@
 
 bool Game::Initialize()
 {
-	tickCount = static_cast<int>(clock());
-
+	tickCount = clock();
 	return true;
 }
 
@@ -28,7 +27,9 @@ void Game::ProcessInput()
 		update = false;
 		int key = _getch();
 		if (key == 'a') {
+			//TEST
 			std::cout << "a" << std::endl;
+			update = true;
 		}
 	}
 }
@@ -36,12 +37,12 @@ void Game::ProcessInput()
 void Game::UpdateGame()
 {
 	//计算时间步长
-	currentTick = static_cast<int>(clock());
-	float deltaTime = (currentTick - tickCount) / 1000;
+	while (clock() - tickCount < 16);
+	currentTick = clock();
+	float deltaTime = static_cast<float>((currentTick - tickCount)) / CLOCKS_PER_SEC;
 	tickCount = currentTick;
 
-	//假设需要更新
-	update = true;
+
 
 	//检测是否需要更新游戏
 	if (!update) { return; }
@@ -54,7 +55,9 @@ void Game::GenerateOutput() {
 
 	//输出图像
 	system("cls");//清屏
-	std::cout << tickCount ;
+
+	//TEST
+	std::cout << tickCount << std::endl;
 
 	//重置更新
 	update = false;
