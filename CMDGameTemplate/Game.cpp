@@ -36,17 +36,18 @@ void Game::ProcessInput()
 
 void Game::UpdateGame()
 {
-	//计算时间步长
+	//锁定60帧率
 	while (clock() - tickCount < 16);
 	currentTick = clock();
+	//计算时间步长
 	float deltaTime = static_cast<float>((currentTick - tickCount)) / CLOCKS_PER_SEC;
 	tickCount = currentTick;
 
-
+	//TEST
+	//update = true;
 
 	//检测是否需要更新游戏
 	if (!update) { return; }
-
 }
 
 void Game::GenerateOutput() {
