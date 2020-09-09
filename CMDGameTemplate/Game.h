@@ -1,9 +1,8 @@
 #pragma once
-#include <iomanip>
-#include <windows.h>
+#include <time.h>
 #include <conio.h>
 #include <iostream>
-#include <stdio.h>
+
 
 class Game {
 public:
